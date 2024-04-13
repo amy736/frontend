@@ -1,0 +1,53 @@
+<div id="outPopUp" class="">
+    <div class="">
+  
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <br><br>
+          <div align="center">
+            <img  src="/assets/addstudent.png" style="height: 100px;">
+      <br><br>
+        <form  [formGroup]="bookingForm" >
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control" formControlName="customer_name" placeholder="Customer Name">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <label for="checkin_date">Check-In Date</label>
+            <input type="date" class="form-control"  formControlName="checkin_date" placeholder="Check-In Date">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <label for="checkout_date">Check-Out Date</label>
+            <input type="date" class="form-control"  formControlName="checkout_date" placeholder="Check-Out Date">
+          </div>
+          <br>
+          <div  class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="room_type" placeholder="Room Type">
+          </div>
+          <br>
+          <div  class="col-lg-4 mx-auto" >
+            <input type="number" class="form-control" formControlName="numb_guests" placeholder="Number of Guests">
+          </div>
+          <br>
+          <div  class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="status_booking" placeholder="Status Booking">
+          </div>
+          <div align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="bookingSubmit()">
+      <button>Add Customer</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  

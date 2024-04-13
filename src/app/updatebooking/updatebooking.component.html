@@ -1,0 +1,68 @@
+<!-- Pop-up container with id 'outPopUp' -->
+<div id="outPopUp" class="">
+
+  <!-- Inner div container -->
+  <div class="">
+
+      <!-- Display error alert if 'errormsg' exists -->
+      <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <!-- Display the error message -->
+          <strong>{{errormsg}}</strong>
+          <!-- Close button for the alert -->
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <!-- Display success alert if 'successmsg' exists -->
+      <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+          <!-- Display the success message -->
+          <strong>{{successmsg}}</strong>
+          <!-- Close button for the alert -->
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <!-- Spacer -->
+      <br><br>
+
+      <!-- Center-aligned container with an image -->
+      <div align="center">
+          <img src="/assets/addstudent.png" style="height: 100px;">
+          <br><br>
+      </div>
+
+      <!-- Form container with formGroup 'infoForm' -->
+      <form [formGroup]="infoForm">
+
+          <!-- Customer name input field -->
+          <div class="col-lg-4 mx-auto">
+              <input type="text" class="form-control" formControlName="customer_name" placeholder="Customer Name">
+          </div>
+
+          <!-- Spacer -->
+          <br>
+
+          <!-- Customer email input field -->
+          <div class="col-lg-4 mx-auto">
+              <input type="text" class="form-control" formControlName="customer_email" placeholder="Customer Email">
+          </div>
+
+          <!-- Spacer -->
+          <br>
+
+          <!-- Customer phone input field -->
+          <div class="col-lg-4 mx-auto">
+              <input type="text" class="form-control" formControlName="customer_phone" placeholder="Customer Phone">
+          </div>
+
+          <!-- Spacer -->
+          <br>
+
+          <!-- Confirm update button container -->
+          <div align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="infoUpdate()">
+              <!-- Confirm update button -->
+              <button>Confirm Update</button>
+          </div>
+
+      </form>
+
+  </div>
+</div>
